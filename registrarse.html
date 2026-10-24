@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softix</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/registrarse.css">
+</head>
+<body>
+    <header>
+        <img src="assets/LogoCortado.png" alt="LOG-SOFTIX">
+        <p><i>"Innovación en código, soluciones que impulsan tu futuro."</i></p>
+    </header>
+    <nav>
+              <button type="button" class="menu-hamburguesa" id="btn-menu">
+            &#9776
+        </button>
+        <ul id="menu-lista">
+<li><a href="registrarse.html" class="activate">REGISTRARSE </a></li>
+            <li><a href="">ACERCA DE.. /</a></li>
+            <li><a href="">PRODUCTOS /</a></li>
+            <li><a href="">NOSOTROS /</a></li>
+            <li><a href="">MISIÓN /</a></li>
+
+        </ul>
+    </nav>
+    <div class="contenedor-1">
+ <main>
+    <form action="http://idawis-uaz.ddns.net:9001/formulario" method="POST" class="formulario-softix">
+    
+    <!-- BLOQUE 1: DATOS DE IDENTIFICACIÓN -->
+    <div class="seccion-form">
+        <h3>Datos de Identificación</h3>
+        
+        <div class="grid-2-col">
+            <div class="campo">
+                <label for="primer-apellido">PRIMER APELLIDO *</label>
+                <input type="text" id="primer-apellido" name="primer_apellido" required>
+            </div>
+            <div class="campo">
+                <label for="segundo-apellido">SEGUNDO APELLIDO</label>
+                <input type="text" id="segundo-apellido" name="segundo_apellido">
+            </div>
+        </div>
+
+        <div class="campo ancho-completo">
+            <label for="nombres">NOMBRE(S) *</label>
+            <input type="text" id="nombres" name="nombres" required>
+        </div>
+
+        <div class="grid-2-col">
+            <div class="campo">
+                <label for="rfc">RFC * (13 Caracteres)</label>
+                <input type="text" id="rfc" name="rfc" pattern="[A-Za-z]{4}[0-9]{6}[A-Za-z0-9]{3}" maxlength="13" placeholder="ABCD000101XXX" required title="El RFC debe contener 4 letras, 6 números (AAMMDD) y 3 caracteres de homoclave.">
+            </div>
+            <div class="campo">
+                <label for="fecha-nacimiento">FECHA DE NACIMIENTO *</label>
+                <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required>
+            </div>
+        </div>
+
+        <div class="grid-2-col">
+            <div class="campo">
+                <label for="genero">GÉNERO *</label>
+                <select id="genero" name="genero" required onchange="toggleOtroGenero(this.value)">
+                    <option value="">-- Seleccionar --</option>
+                    <option value="H">Hombre</option>
+                    <option value="M">Mujer</option>
+                    <option value="O">Otro</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="entidad-nacimiento">ENTIDAD DE NACIMIENTO *</label>
+                <select id="entidad-nacimiento" name="entidad_nacimiento" required>
+                    <option value="">-- Seleccionar Estado --</option>
+                    <option value="AS">AGUASCALIENTES</option>
+                    <option value="BC">BAJA CALIFORNIA</option>
+                    <option value="BS">BAJA CALIFORNIA SUR</option>
+                    <option value="CC">CAMPECHE</option>
+                    <option value="CL">COAHUILA</option>
+                    <option value="CM">COLIMA</option>
+                    <option value="CS">CHIAPAS</option>
+                    <option value="CH">CHIHUAHUA</option>
+                    <option value="DF">CIUDAD DE MÉXICO</option>
+                    <option value="DG">DURANGO</option>
+                    <option value="GT">GUANAJUATO</option>
+                    <option value="GR">GUERRERO</option>
+                    <option value="HG">HIDALGO</option>
+                    <option value="JC">JALISCO</option>
+                    <option value="MC">MÉXICO</option>
+                    <option value="MN">MICHOACÁN</option>
+                    <option value="MS">MORELOS</option>
+                    <option value="NT">NAYARIT</option>
+                    <option value="NL">NUEVO LEÓN</option>
+                    <option value="OC">OAXACA</option>
+                    <option value="PL">PUEBLA</option>
+                    <option value="QT">QUERÉTARO</option>
+                    <option value="QR">QUINTANA ROO</option>
+                    <option value="SP">SAN LUIS POTOSÍ</option>
+                    <option value="SL">SINALOA</option>
+                    <option value="SR">SONORA</option>
+                    <option value="TC">TABASCO</option>
+                    <option value="TS">TAMAULIPAS</option>
+                    <option value="TL">TLAXCALA</option>
+                    <option value="VZ">VERACRUZ</option>
+                    <option value="YN">YUCATÁN</option>
+                    <option value="ZS">ZACATECAS</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Campo adicional dinámico cuando seleccionan 'Otro' en género -->
+        <div class="campo ancho-completo" id="campo-otro-genero" style="display: none;">
+            <label for="especifique-genero">ESPECIFIQUE GÉNERO:</label>
+            <input type="text" id="especifique-genero" name="especifique_genero">
+        </div>
+    </div>
+
+    <!-- CONTENEDOR PARA UBICACIÓN + EVALUACIÓN/VERIFICACIÓN -->
+    <div class="grid-ubicacion-evaluacion">
+        
+        <!-- BLOQUE 2: DATOS DE UBICACIÓN -->
+        <div class="seccion-form col-izquierda">
+            <h3>Datos de Ubicación</h3>
+
+            <div class="campo">
+                <label for="domicilio">DOMICILIO *</label>
+                <input type="text" id="domicilio" name="domicilio" required>
+            </div>
+
+            <div class="campo">
+                <label for="ciudad">CIUDAD *</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+            </div>
+
+            <div class="campo">
+                <label for="estado">ESTADO *</label>
+                <select id="estado" name="estado" required>
+                    <option value="">-- Seleccionar Estado --</option>
+                    <option value="AS">AGUASCALIENTES</option>
+                    <option value="BC">BAJA CALIFORNIA</option>
+                    <option value="BS">BAJA CALIFORNIA SUR</option>
+                    <option value="CC">CAMPECHE</option>
+                    <option value="CL">COAHUILA</option>
+                    <option value="CM">COLIMA</option>
+                    <option value="CS">CHIAPAS</option>
+                    <option value="CH">CHIHUAHUA</option>
+                    <option value="DF">CIUDAD DE MÉXICO</option>
+                    <option value="DG">DURANGO</option>
+                    <option value="GT">GUANAJUATO</option>
+                    <option value="GR">GUERRERO</option>
+                    <option value="HG">HIDALGO</option>
+                    <option value="JC">JALISCO</option>
+                    <option value="MC">MÉXICO</option>
+                    <option value="MN">MICHOACÁN</option>
+                    <option value="MS">MORELOS</option>
+                    <option value="NT">NAYARIT</option>
+                    <option value="NL">NUEVO LEÓN</option>
+                    <option value="OC">OAXACA</option>
+                    <option value="PL">PUEBLA</option>
+                    <option value="QT">QUERÉTARO</option>
+                    <option value="QR">QUINTANA ROO</option>
+                    <option value="SP">SAN LUIS POTOSÍ</option>
+                    <option value="SL">SINALOA</option>
+                    <option value="SR">SONORA</option>
+                    <option value="TC">TABASCO</option>
+                    <option value="TS">TAMAULIPAS</option>
+                    <option value="TL">TLAXCALA</option>
+                    <option value="VZ">VERACRUZ</option>
+                    <option value="YN">YUCATÁN</option>
+                    <option value="ZS">ZACATECAS</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- BLOQUE 3 Y 4: EVALUACIÓN Y VERIFICACIÓN -->
+        <div class="col-derecha">
+            
+            <div class="campo campo-cp">
+                <label for="codigo-postal">CÓDIGO POSTAL * (5 dígitos)</label>
+                <input type="text" id="codigo-postal" name="codigo_postal" pattern="[0-9]{5}" maxlength="5" placeholder="98000" required title="Ingresa un Código Postal válido de 5 dígitos numéricos.">
+            </div>
+
+            <div class="seccion-form">
+                <h3>Datos de Evaluación</h3>
+                
+                <div class="fila-evaluacion">
+                    <label for="eval1">EVALUACIÓN 1:</label>
+                    <input type="number" id="eval1" name="eval1" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
+                </div>
+                <div class="fila-evaluacion">
+                    <label for="eval2">EVALUACIÓN 2:</label>
+                    <input type="number" id="eval2" name="eval2" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
+                </div>
+                <div class="fila-evaluacion">
+                    <label for="eval3">EVALUACIÓN 3:</label>
+                    <input type="number" id="eval3" name="eval3" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="seccion-form">
+                <h3>Datos de Verificación</h3>
+                
+                <div class="fila-checkbox">
+                    <input type="checkbox" id="cuota-pagada" name="cuota_pagada" value="1">
+                    <label for="cuota-pagada">CUOTA PAGADA</label>
+                </div>
+                <div class="fila-checkbox">
+                    <input type="checkbox" id="activo" name="activo" value="1">
+                    <label for="activo">ACTIVO</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BOTONES CANCELAR Y ENVIAR -->
+    <div class="contenedor-botones">
+        <button type="reset" class="btn-cancelar">CANCELAR</button>
+        <button type="submit" class="btn-enviar">ENVIAR</button>
+    </div>
+
+</form>
+
+<!-- Script para mostrar/ocultar el campo 'Otro' en Género -->
+<script>
+    function toggleOtroGenero(valor) {
+        const campoOtro = document.getElementById('campo-otro-genero');
+        const inputOtro = document.getElementById('especifique-genero');
+        if (valor === 'O') {
+            campoOtro.style.display = 'block';
+            inputOtro.required = true;
+        } else {
+            campoOtro.style.display = 'none';
+            inputOtro.required = false;
+            inputOtro.value = '';
+        }
+    }
+</script>
+</main>
+<!-- SECION AVISOS-->
+        <aside>
+            <div id="avisoPrincipal">
+                <h2>AVISOS</h2>
+            </div>
+  
+            <article class="aviso">
+                <h3>AVISOS-1 </h3>
+                <p><strong>Mantenimiento Preventivo</strong></p>
+                <p><time datetime="2026-10-23">23-Octubre-2026</time></p>
+                <p>Se realizara Mantenimiento Preventivo al sitio web!!</p>
+            </article>
+
+            <article class="aviso">
+                <h3>AVISOS - 2</h3>
+                <p><strong>Seccion Producto Implementada</strong></p>
+                <p><time datetime="2026-10-26">26-Octubre-2026</time></p>
+                <p>Implementación de la nueva seccion "Productos" </p>
+            </article>
+
+        </aside>
+    </div>
+
+    <!--FOOTER-->
+    <footer>
+        <p><i>"Empresa de desarrollo de software especializada en la creación de soluciones digitales escalables, aplicaciones móviles y plataformas web de alto impacto." </i></p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+           <!-- */

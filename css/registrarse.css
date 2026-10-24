@@ -1,0 +1,162 @@
+.formulario-softix {
+    width: 90%;
+    padding: 20px;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.seccion-form h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+/* Manejo de columnaaas */
+.grid-2-col {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.grid-2-col .campo {
+    flex: 1;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    color: #1e293b;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.campo input[type="text"] {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #2563eb; /* Borde azul como la imagen */
+    border-radius: 0;
+    outline: none;
+}
+
+.ancho-completo {
+    width: 100%;
+}
+
+/* Alineación de Ubicación vs Evaluación*/
+.grid-ubicacion-evaluacion {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.col-izquierda {
+    flex: 1.5;
+}
+
+.col-derecha {
+    flex: 1;
+}
+
+.campo-cp {
+    max-width: 200px;
+}
+
+/* Evaluaciones */
+.fila-evaluacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 220px;
+    margin-bottom: 8px;
+}
+
+.fila-evaluacion label {
+    font-size: 0.85rem;
+}
+
+.input-corto {
+    width: 50px !important;
+    height: 25px;
+    border: 1px solid #2563eb;
+}
+
+/* Checkboxes cuadrados de Verificación */
+.fila-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.fila-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #2563eb;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.fila-checkbox input[type="checkbox"]:checked {
+    background-color: #2563eb;
+}
+
+.fila-checkbox label {
+    font-size: 0.85rem;
+}
+
+/* Botones  */
+.contenedor-botones {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    max-width: 400px;
+}
+
+.btn-cancelar, .btn-enviar {
+    flex: 1;
+    background-color: #e0f2fe; 
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.btn-cancelar:hover, .btn-enviar:hover {
+    background-color: #bae6fd;
+}
+/* Estilos para los selects */
+.campo select {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #2563eb;
+    background-color: #ffffff;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.campo input[type="date"],
+.campo input[type="number"] {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #2563eb;
+    outline: none;
+    font-family: inherit;
+}
+
+/* Marca bordes rojos sutiles cuando un campo obligatorio sea inválido */
+.campo input:invalid:focus,
+.campo select:invalid:focus {
+    border-color: #ef4444;
+}
