@@ -29,9 +29,12 @@
  <main>
     <form action="http://idawis-uaz.ddns.net:9001/formulario" method="POST" class="formulario-softix">
     
+        <!--BLOQUE PADRE-->
+
+        <div class="contenedor-Padre">
     <!-- BLOQUE 1: DATOS DE IDENTIFICACIÓN -->
     <div class="seccion-form">
-        <h3>Datos de Identificación</h3>
+        <h3 id="h3-bloque-1">DATOS DE IDENTIFICACIÓN</h3>
         
         <div class="grid-2-col">
             <div class="campo">
@@ -110,19 +113,16 @@
             </div>
         </div>
 
-        <!-- Campo adicional dinámico cuando seleccionan 'Otro' en género -->
         <div class="campo ancho-completo" id="campo-otro-genero" style="display: none;">
             <label for="especifique-genero">ESPECIFIQUE GÉNERO:</label>
             <input type="text" id="especifique-genero" name="especifique_genero">
         </div>
-    </div>
 
-    <!-- CONTENEDOR PARA UBICACIÓN + EVALUACIÓN/VERIFICACIÓN -->
-    <div class="grid-ubicacion-evaluacion">
         
-        <!-- BLOQUE 2: DATOS DE UBICACIÓN -->
+    </div>
+      <!-- BLOQUE 2: DATOS DE UBICACIÓN -->
         <div class="seccion-form col-izquierda">
-            <h3>Datos de Ubicación</h3>
+            <h3 id="h3-datos-ubicacion">DATOS DE UBICACIÓN</h3>
 
             <div class="campo">
                 <label for="domicilio">DOMICILIO *</label>
@@ -172,48 +172,49 @@
                     <option value="ZS">ZACATECAS</option>
                 </select>
             </div>
-        </div>
-
-        <!-- BLOQUE 3 Y 4: EVALUACIÓN Y VERIFICACIÓN -->
-        <div class="col-derecha">
-            
-            <div class="campo campo-cp">
+                       <div class="campo campo-cp">
                 <label for="codigo-postal">CÓDIGO POSTAL * (5 dígitos)</label>
                 <input type="text" id="codigo-postal" name="codigo_postal" pattern="[0-9]{5}" maxlength="5" placeholder="98000" required title="Ingresa un Código Postal válido de 5 dígitos numéricos.">
             </div>
+        </div>
+        </div>
 
-            <div class="seccion-form">
-                <h3>Datos de Evaluación</h3>
-                
-                <div class="fila-evaluacion">
-                    <label for="eval1">EVALUACIÓN 1:</label>
-                    <input type="number" id="eval1" name="eval1" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
-                </div>
-                <div class="fila-evaluacion">
-                    <label for="eval2">EVALUACIÓN 2:</label>
-                    <input type="number" id="eval2" name="eval2" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
-                </div>
-                <div class="fila-evaluacion">
-                    <label for="eval3">EVALUACIÓN 3:</label>
-                    <input type="number" id="eval3" name="eval3" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
-                </div>
-            </div>
 
-            <div class="seccion-form">
-                <h3>Datos de Verificación</h3>
-                
-                <div class="fila-checkbox">
-                    <input type="checkbox" id="cuota-pagada" name="cuota_pagada" value="1">
-                    <label for="cuota-pagada">CUOTA PAGADA</label>
-                </div>
-                <div class="fila-checkbox">
-                    <input type="checkbox" id="activo" name="activo" value="1">
-                    <label for="activo">ACTIVO</label>
-                </div>
-            </div>
-
+   <!-- CONTENEDOR PARA UBICACIÓN + EVALUACIÓN/VERIFICACIÓN -->
+<div class="contenedor-padre-2">
+    
+    <!-- BLOQUE 3: EVALUACIÓN -->
+    <div class="seccion-form-1">
+        <h3 id="h3-evaluacion">DATOS DE EVALUACIÓN</h3>
+        <div class="fila-evaluacion">
+            <label for="eval1">EVALUACIÓN 1:</label>
+            <input type="number" id="eval1" name="eval1" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
+        </div>
+        <div class="fila-evaluacion">
+            <label for="eval2">EVALUACIÓN 2:</label>
+            <input type="number" id="eval2" name="eval2" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
+        </div>
+        <div class="fila-evaluacion">
+            <label for="eval3">EVALUACIÓN 3:</label>
+            <input type="number" id="eval3" name="eval3" min="0" max="10" step="0.01" class="input-corto" placeholder="0.00">
         </div>
     </div>
+
+    <!-- BLOQUE 4: VERIFICACIÓN -->
+    <div class="seccion-form-2">
+        <h3 id="h3-verifcacion">DATOS DE VERIFICACIÓN</h3>
+        <div class="fila-checkbox">
+            <input type="checkbox" id="cuota-pagada" name="cuota_pagada" value="1">
+            <label for="cuota-pagada">CUOTA PAGADA</label>
+        </div>
+        <div class="fila-checkbox">
+            <input type="checkbox" id="activo" name="activo" value="1">
+            <label for="activo">ACTIVO</label>
+        </div>
+    </div>
+
+</div>
+
 
     <!-- BOTONES CANCELAR Y ENVIAR -->
     <div class="contenedor-botones">
