@@ -179,24 +179,34 @@ footer p {
 
     .menu-hamburguesa {
         display: block;
+        position: absolute;
+        top: 20px;          
+        right: 20px;
+        color: #2563eb;    
+        z-index: 110;       
     }
 
+/*QUITAR BARRA AZUL*/
     nav {
-        height: auto;
-        padding: 8px 0;
+        background-color: transparent !important; 
+        border-bottom: none !important;          
+        min-height: 0 !important;                 
+        margin-top: 0;
+        padding: 0;
     }
 
     nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 0px;          
         left: 0;
         width: 100%;
-        background-color: #2563eb;
-        z-index: 100;
+        background-color: #2563eb; 
         gap: 0;
         padding: 10px 0;
+        border-bottom: 1px solid white;
+        z-index: 10000;
     }
 
     nav ul.activo {

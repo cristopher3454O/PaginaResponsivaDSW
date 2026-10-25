@@ -265,4 +265,49 @@
     font-size: 0.9rem;
 
 }
+/*Responsive*/
+@media screen and (max-width: 600px) {
+     .contenedor-Padre,
+    .contenedor-padre-2,
+    .grid-2-col {
+        flex-direction: column;
+        width: 100% !important; 
+        height: auto !important;
+        gap: 15px;
+    }
+     .seccion-form,
+    .col-izquierda,
+    .contenedor-padre-2 .seccion-form-1,
+    .contenedor-padre-2 .seccion-form-2 {
+        width: 100% !important;   
+        height: auto !important;  
+        padding: 15px !important;
+    }
+
+    /* H3 */
+    #h3-bloque-1,
+    #h3-datos-ubicacion,
+    #h3-evaluacion,
+    #h3-verifcacion {
+        width: calc(100% + 30px) !important; /* Se expande para cubrir los paddings */
+        margin-left: -15px !important;       /* Los alinea al ras izquierdo del contenedor */
+        margin-top: -15px !important;        /* Los alinea al ras superior del contenedor */
+        border-radius: 10px 10px 0 0;        
+    }
+
+    
+    .campo-cp {
+        width: 100%; 
+    }
+
+    .fila-evaluacion {
+        max-width: 100%; /* Las evaluaciones usan todo el ancho disponible */
+    }
+
+    .contenedor-botones {
+        max-width: 100%; /* botones ocupan todo el ancho de la pantalla abajo */
+    }
+}
+
+    
 
