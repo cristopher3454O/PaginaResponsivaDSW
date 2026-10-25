@@ -146,6 +146,7 @@
     cursor: pointer;
     font-size: 0.9rem;
     letter-spacing: 1px;
+    border: 1px solid #1e3a8a;
 }
 
 .btn-cancelar:hover, .btn-enviar:hover {
@@ -240,6 +241,7 @@
     font-size: 0.9rem;
 
 }
+/*SECCION VERIFCACIONES*/
 .contenedor-padre-2 .seccion-form-2 {
     background-color: #2564eb48;
     padding: 15px;
