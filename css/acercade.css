@@ -1,0 +1,108 @@
+/* Contenedor principal en formato Flexbox */
+.seccion-acerca-de {
+    max-width: 1000px;
+    margin:  auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.contenedor-foto {
+    flex: 1;
+    max-width: 300px;
+    position: relative;
+    top: 0;
+}
+
+.foto-movil {
+    display: none;
+}
+
+.foto-perfil {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid #2563eb;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.contenedor-info {
+    flex: 2;
+}
+
+.subtitulo {
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.yo h2 {
+    font-size: 2.3rem;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.aka {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.historia {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.skills-container, .hobbies-container {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid #2563eb;
+}
+
+.lista-skills, .lista-hobbies {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-skills li, .lista-hobbies li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.superpoder {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8fcf5;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .seccion-acerca-de {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .foto-pc {
+        display: none;
+    }
+
+    .foto-movil {
+        display: block;
+        max-width: 250px;
+        margin: 20px auto; 
+    }
+    
+    .historia {
+        text-align: left;
+    }
+}
