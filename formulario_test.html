@@ -1,0 +1,48 @@
+<html>
+ <head>
+  <title>Formulario test</title>
+  <script>
+   function calcularPromedio() {
+     var c1 = parseFloat(document.getElementById('calif1').value) || 0;
+     var c2 = parseFloat(document.getElementById('calif2').value) || 0;
+     var c3 = parseFloat(document.getElementById('calif3').value) || 0;
+     
+     var promedio = (c1 + c2 + c3) / 3;
+     document.getElementById('resultadoPromedio').innerText = promedio.toFixed(2);
+   }
+  </script>
+ </head>
+ <body>
+
+  <h1>Formulario Test</h1>
+  <form name="formulario" id="formulario" action="procesa.php" method="get">
+      <label for="nombre">Nombre:</label>  
+      <input type="text" name="nombre" id="nombre" title="Coloca tu nombre"
+             value="" size="40" maxlength="80" required /><br/>
+      <label for="apellidos">Apellidos:</label>  
+      <input type="text" name="apellidos" id="apellidos" required/><br/>
+      <label for="password">Password:</label>  
+      <input type="password" maxlength="20" size="10" id="pass" name="pass" />
+      <label for="fechanac">Fecha de nacimiento:</label>  
+      <input type="date" name="fechanac" id="fechanac" required />
+      <br/>
+      <label for="genero">Genero:</label>
+      <input type="radio" name="genero" id="genero" value="M" required/>Mujer
+      <input type="radio" name="genero" id="genero" value="H" required/>Hombre
+      <input type="radio" name="genero" id="genero" value="N" />No Binario<br/>
+      <label for="calif1">Primer examen parcial: </label>
+      <input type="range" name="calif1" id="calif1" min="0" max="10" step="0.01" value="0" oninput="val1.value = this.value" required/> 
+      <output id="val1">0</output><br/>
+      <label for="calif2">Segundo examen parcial: </label>
+      <input type="range" name="calif2" id="calif2" min="0" max="10" step="0.01" value="0" oninput="val2.value = this.value" required/> 
+      <output id="val2">0</output><br/>
+      <label for="calif3">Tercer examen parcial: </label>
+      <input type="range" name="calif3" id="calif3" min="0" max="10" step="0.01" value="0" oninput="val3.value = this.value" required/> 
+      <output id="val3">0</output><br/><br/>
+      <input type="button" value="Calcular promedio" onclick="calcularPromedio()" /><br/><br/>
+      <div>Promedio: <span id="resultadoPromedio">0.00</span></div><br/>
+      <input type="submit" value="Enviar" />
+      <input type="reset" value="Limpiar" />
+  </form>
+ </body>
+</html>
